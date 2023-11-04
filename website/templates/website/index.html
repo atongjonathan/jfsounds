@@ -1,0 +1,262 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | JF Sounds</title>
+    <link rel="icon" href="https://telegra.ph/file/d2a3cac35fc43dda8cb5d.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+</head>
+<body>
+    <header class="header">
+        <!-- <div class="intro">
+            <div class="title"><a href="{% url 'index' %}" class="intro-content start">Jf Sounds</a></div>
+            <div class="contact">
+                <a href="tel:254721920168" class="intro-content">254721920168</a>
+                <a href="{% url 'contact' %}#main" class="intro-content border-left">contact us</a>                 
+            </div>
+        </div> -->
+        <div class="navigation">
+            <div class="logo">
+                <a class="logo-img" href=""><img class="logo-img" src="https://telegra.ph/file/d2a3cac35fc43dda8cb5d.jpg" alt="logo"></a>
+            </div>
+            <div class="nav-bar">
+                <ul class="links">
+                    <li><a class="link-child" href="{% url 'index' %}#main">Events</a> </li>
+                    <li><a class="link-child" href="{% url 'index' %}#main">Service</a> </li>
+                    <li><a class="link-child" href="{% url 'index' %}#main">Equipment</a> </li>
+                    <li><a class="link-child" href="{% url 'work' %}#main">Our Work</a> </li>
+                    <li><a class="link-child" href="{% url 'about' %}#main">About</a> </li>
+                    <li><a class="link-child" href="{% url 'careers' %}#main">Careers</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="video-div">
+                <video class="video" autoplay loop muted>
+                    <source src="{% static 'website/video/video.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag
+                </video>
+                <!-- <div class="socials-div">
+                    <div class="ul-socials-div">
+                        <ul class="ul-socials">
+                            <li class="socials-child">
+                                <div class="socials">
+                                    <i class="fa-brands fa-whatsapp image green"></i>                                
+                                    <p class="image-text">Book Us Now<br>+254 739 933 7272<br>+254 722 857 070</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class=".ul-socials">Book Us Now</button>
+                    </div>                    -->
+                    <div id="main" class="main-title">
+                        <p class="video-text">{{ title }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-2">
+            <div class="nav-div">
+                <div class="links-secondary">
+                    <a href="{% url 'av' %}#main" class="links-child-2">av equipent rental</a>
+                    <a href="{% url 'special' %}#main" class="links-child-2">special effects</a>
+                    <a href="{% url 'audio' %}#main" class="links-child-2">audio</a>
+                    <a href="{% url 'lighting' %}#main" class="links-child-2">lighting</a>
+                    <a href="{% url 'staging' %}#main" class="links-child-2">staging</a>
+                    <a href="{% url 'backline' %}#main" class="links-child-2">backline</a>
+    
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+    <section>
+        <h1><a href="#main">Main</a></h1>
+        {% block main %}
+        {% endblock %}
+    </section>
+
+    <section class="quote">
+        <p class="get-quote">Get a quick quote!</p>
+        <p class="contact-text">Contact us to learn how we can put together a specialized video package that will work for your event.</p>
+        <a href="{% url 'contact' %}"><button class="request-button">Request {{ title }}</button></a>
+
+    </section>
+    <div class="ending-img-div">
+        <img class="ending-img" src="https://onstage.wpenginepowered.com/wp-content/uploads/2019/08/audio-visual-equipment-rentals-for-festival-productions.jpg" alt="jfsounds image">
+    </div>
+    <section class="form-section">
+        <div class="section-form">
+        <form class="form" action="submit">
+            <h3 class="request">REQUEST A QUICK QUOTE</h3>
+            <div class="container">
+                <div class="row-1">
+                    <div class="col "><input class="uniform" type="text" placeholder="First Name" size="10" required></div>
+                    <div class="col name"><input class="uniform" type="text" placeholder="Last Name" size="10" required></div>
+                </div>   
+                <div class="row-2">
+                    <div class="col name"><input class="uniform" type="email" placeholder="Email Address" size="10" required></div>
+                    <div class="col name"><input class="uniform" type="text" placeholder="Phone Number" size="10" required></div>
+                </div>
+                <div class="checkbox row-1">
+                    <div class="row additional">
+                        Type of Equipment Needed For Rent (Mark All That Apply)
+                    </div>
+                    <div class="boxes">
+                        <div class="row-">
+                            <label for="audio"><input id="audio" type="checkbox"> Audio</label>
+                            <label for="video"><input id="video" type="checkbox"> Video </label>
+                            <label for="crow additionald"><input id="crow additionald" type="checkbox"> Crow additionald Control </label>
+                            <label for="backline"><input id="backline" type="checkbox"> Backline </label>
+                        </div>
+                        <div class="row-">
+                            <label for="lighting"><input id="lighting" type="checkbox"> Lighting</label>
+                            <label for="staging"><input id="staging" type="checkbox"> Staging, Rooftops and Mobile Staging </label>
+                            <label for="special"><input id="special" type="checkbox"> Special Effects </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row-1">
+                    <select class="uniform" style="width: 45%;" name="state" id="state">
+                        <option value="" selected="selected">Select County</option>
+                        <option value="Baringo">Baringo</option>
+                        <option value="Bomet">Bomet</option>
+                        <option value="Bungoma">Bungoma</option>
+                        <option value="Busia">Busia</option>
+                        <option value="Elgeyo Marakwet">Elgeyo Marakwet</option>
+                        <option value="Embu">Embu</option>
+                        <option value="Garissa">Garissa</option>
+                        <option value="Homa Bay">Homa Bay</option>
+                        <option value="Isiolo">Isiolo</option>
+                        <option value="Kajiado">Kajiado</option>
+                        <option value="Kakamega">Kakamega</option>
+                        <option value="Kericho">Kericho</option>
+                        <option value="Kiambu">Kiambu</option>
+                        <option value="Kilifi">Kilifi</option>
+                        <option value="Kirinyaga">Kirinyaga</option>
+                        <option value="Kisii">Kisii</option>
+                        <option value="Kisumu">Kisumu</option>
+                        <option value="Kitui">Kitui</option>
+                        <option value="Kwale">Kwale</option>
+                        <option value="Laikipia">Laikipia</option>
+                        <option value="Lamu">Lamu</option>
+                        <option value="Machakos">Machakos</option>
+                        <option value="Makueni">Makueni</option>
+                        <option value="Mandera">Mandera</option>
+                        <option value="Marsabit">Marsabit</option>
+                        <option value="Meru">Meru</option>
+                        <option value="Migori">Migori</option>
+                        <option value="Mombasa">Mombasa</option>
+                        <option value="Murang'a">Murang'a</option>
+                        <option value="Nairobi City">Nairobi City</option>
+                        <option value="Nakuru">Nakuru</option>
+                        <option value="Nandi">Nandi</option>
+                        <option value="Narok">Narok</option>
+                        <option value="Nyamira">Nyamira</option>
+                        <option value="Nyandarua">Nyandarua</option>
+                        <option value="Nyeri">Nyeri</option>
+                        <option value="Samburu">Samburu</option>
+                        <option value="Siaya">Siaya</option>
+                        <option value="Taita-Taveta">Taita-Taveta</option>
+                        <option value="Tana River">Tana River</option>
+                        <option value="Tharaka-Nithi">Tharaka-Nithi</option>
+                        <option value="Trans Nzoia">Trans Nzoia</option>
+                        <option value="Turkana">Turkana</option>
+                        <option value="Uasin Gishu">Uasin Gishu</option>
+                        <option value="Vihiga">Vihiga</option>
+                        <option value="Wajir">Wajir</option>
+                        <option value="West Pokot">West Pokot</option>
+                        
+                    </select>
+                    <select class="uniform" style="width: 45%;">
+                        <option value="" selected="selected" class="gf_placeholder">Eqpt. Rental Budget (Select from Dropdown)</option>
+                        <option value="Kshs. 5,000 - Kshs. 10,000">Kshs. 5,000 - Kshs. 10,000</option>
+                        <option value="Kshs. 10,000 - 15,000">Kshs. 10,000 - 15,000</option>
+                        <option value="Kshs. 15,000 - Kshs. 20,000">Kshs. 15,000 - Kshs. 20,000</option>
+                        <option value="Kshs. 20,000 - Kshs. 30,000">Kshs. 20,000 - Kshs. 30,000</option>
+                        <option value="Kshs. 30,000 - Kshs. 50,000">Kshs. 30,000 - Kshs. 50,000</option>
+                        <option value="More than Kshs. 50,000">More than Kshs. 50,000</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="row-1 boxes date-div">
+                    <div class="date-text additional">
+                        Date:
+                    </div>
+                    <input class="date" type="date" placeholder="Select a Date"></div></div>
+                <div class="textarea-div">
+                    <textarea class="textarea" title="Text" class="form-control" name="" id=""  cols="96" rows="5" placeholder="Tell Us More About Your Needs"></textarea>
+                </div>
+                <div class="row additional">
+                    <button type="submit" class="request-button submit">Submit</button>
+                </div>
+            </div>
+        </div>
+        </form>
+
+    </section>
+    <footer class="footer">
+        <div class="section-child">
+            <div class="footer-child">
+                <h3>SOCIALS</h3>
+                <ul class="footer-list image-div">
+                    <li><a title="instagram" href="https://www.instagram.com/jfs_ounds" target="_blank"><i class="fa-brands fa-instagram image"></i></a></i></li>
+                    <li><a title="tiktok" href="https://www.tiktok.com/jfsounds2" target="_blank"><i class="fa-brands fa-tiktok image"></i></a></i></li>
+                    <li><a title="facebook" href="https://www.facebook.com/jfsoundske" target="_blank"><i class="fa-brands fa-facebook image"></i></a></li>
+                    <li><i title="whatsapp" class="fa-brands fa-whatsapp image"></i></li>
+                </ul>
+            </div>
+            <!-- <div class="footer-child">
+                <h3>EVENTS</h3>
+                <ul class="footer-list">
+                    <li>Virtual Events</li>
+                    <li>Concerts $ Tours</li>
+                    <li>Corporate Events</li>
+                    <li>Porfoliio</li>
+                    <li>Festivals</li>
+                    <li>Special Events</li>
+                    <li>Worship Events</li>
+                    <li>Trade Shows</li>
+                </ul>
+            </div> -->
+            <div class="footer-child">
+                <h3>SERVICES</h3>
+                <ul class="footer-list">
+                    <li>Audio Visual Services</li>
+                    <li>Event Production Company</li>
+                    <li>Services</li>
+                    <li>Audio Visual Installation</li>
+                    <li>Stage Design</li>
+                    <li>AV Equipment Rental</li>
+                </ul>
+            </div>
+            <div class="footer-child">
+                <h3>LINKS</h3>
+                <ul class="footer-list">
+                    <li>Who We Are</li>
+                    <li>Safety Commitment</li>
+                    <li>Out Team</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div class="footer-child map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.77385062416!2d36.74300370944863!3d-1.3110476356458813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1af89e77803b%3A0x3feb567b4678bf10!2sNgong%20Race%20Course%20and%20Golf%20Park!5e0!3m2!1sen!2ske!4v1698168537980!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </footer>
+    <div class="copyright">
+        <span>Copyright © 2023. JF Sounds</span>
+        <span><a href="#">Privacy Policy</a></span>
+        <span><a href="#">Site Map</a></span>
+</div>
+ 
+    
+    <script src="{% static 'website/js/script.js' %}"></script>
+</body>
+</html>
