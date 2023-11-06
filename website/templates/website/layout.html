@@ -11,23 +11,46 @@
     <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
 </head>
 <body>
+
     <header class="header">
-        <!-- <div class="intro">
-            <div class="title"><a href="{% url 'index' %}" class="intro-content start">Jf Sounds</a></div>
+      
+        <div class="intro">
+            <!-- <div class="title"><a href="{% url 'index' %}" class="intro-content start">Jf Sounds</a></div>
             <div class="contact">
                 <a href="tel:254721920168" class="intro-content">254721920168</a>
                 <a href="{% url 'contact' %}#main" class="intro-content border-left">contact us</a>                 
             </div> -->
         </div>
+        {% if is_success %}
+        <div class="alert alert-success" role="alert">
+          Sent successfully!
+        </div>
+          {% endif %}
         <div class="navigation">
+            
             <div class="logo">
                 <a class="logo-img" href="{% url 'index' %}#main"><img class="logo-img" src="https://telegra.ph/file/d2a3cac35fc43dda8cb5d.jpg" alt="logo"></a>
+                <div class="title"><a href="{% url 'index' %}" class="intro-content start">Jf Sounds Lighting and Equipment</a></div>
+
             </div>
+           
             <div class="nav-bar">
                 <ul class="links">
-                    <li><a class="link-child" href="{% url 'index' %}#main">Services</a> </li>
-                    <li><a class="link-child" href="{% url 'work' %}#main">Our Work</a> </li>
+                    <!-- <li><a class="link-child dropdown" href="{% url 'index' %}">Home</a> </li> -->
+                    <li><a id="services" class="link-child" href="{% url 'index' %}#main">Services</a>
+                        <div id="hidden" class="links-secondary dropdown-content dropdown hidden">
+                            <a href="{% url 'av' %}#main" class="links-child-2">av equipent rental</a>
+                            <a href="{% url 'special' %}#main" class="links-child-2">special effects</a>
+                            <a href="{% url 'audio' %}#main" class="links-child-2" >audio</a>
+                            <a href="{% url 'lighting' %}#main" class="links-child-2">lighting</a>
+                            <a href="{% url 'staging' %}#main" class="links-child-2">staging</a>
+                            <a href="{% url 'backline' %}#main" class="links-child-2">backline</a>
+            
+                        </div>
+                    </li>
+
                     <li><a class="link-child" href="{% url 'careers' %}#main">Careers</a> </li>
+                    <li><a class="link-child" href="{% url 'work' %}#main">Our Work</a> </li>
                     <li><a class="link-child" href="{% url 'contact' %}#main">Contact Us</a> </li>
                     <li><a class="link-child" href="{% url 'about' %}#main">About</a> </li>
                 </ul>
@@ -43,6 +66,7 @@
                     <div class="footer-child">
                         <!-- <h5 class="link-chld">SOCIALS</h5> -->
                         <ul class="footer-list image-div">
+                            <li><a title="email" href="mailto:atongjonathan@gmail.com" target="_blank"><i class="fa-solid fa-envelope image"></i></a></i></li>
                             <li><a title="instagram" href="https://www.instagram.com/jfs_ounds" target="_blank"><i class="fa-brands fa-instagram image"></i></a></i></li>
                             <li><a title="tiktok" href="https://www.tiktok.com/jfsounds2" target="_blank"><i class="fa-brands fa-tiktok image"></i></a></i></li>
                             <li><a title="facebook" href="https://www.facebook.com/jfsoundske" target="_blank"><i class="fa-brands fa-facebook image"></i></a></li>
@@ -59,7 +83,7 @@
         </div>
         <div class="nav-2">
             <div class="nav-div">
-                <div class="links-secondary">
+                <div class="links-secondary dropdown-content">
                     <a href="{% url 'av' %}#main" class="links-child-2">av equipent rental</a>
                     <a href="{% url 'special' %}#main" class="links-child-2">special effects</a>
                     <a href="{% url 'audio' %}#main" class="links-child-2">audio</a>
@@ -92,6 +116,13 @@
 {% if is_contact %}
 {% else %}
     <section class="form-section">
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
         <div class="section-form">
         <form class="form" method="post" action="{% url 'index' %}">
             {% csrf_token %}
@@ -103,7 +134,8 @@
                 </div>   
                 <div class="row-2">
                     <div class="col name"><input class="uniform" type="email" name="email" placeholder="Email Address" size="10" required></div>
-                    <div class="col name"><input class="uniform" type="text" name="number" placeholder="Phone Number" size="10" required></div>
+                    <div class="col name"><input class="uniform" type="tel" id="phone" name="number" placeholder="Phone Number: 0712345678" pattern="[0-9]{10}" size="10" required>
+                        </div>
                 </div>
                 <div class="checkbox row-1">
                     <div class="row additional">
@@ -125,7 +157,7 @@
 
                 </div>
                 <div class="row-1">
-                    <select class="uniform" style="width: 45%;" name="state" id="state" required>
+                    <select class="uniform" name="state" id="state" required>
                         <option value="" selected="selected">Select County</option>
                         <option value="Baringo">Baringo</option>
                         <option value="Bomet">Bomet</option>
@@ -193,10 +225,10 @@
                     </div>
                     <input class="date" name="date" type="date" placeholder="Select a Date" required></div></div>
                 <div class="textarea-div">
-                    <textarea class="textarea" name="info" title="Text" class="form-control" name="" id=""  cols="35" rows="" placeholder="Tell Us Something"></textarea>
+                    <textarea class="textarea" name="info" title="Text" class="form-control" name="" id=""  cols="35" rows="" placeholder="Tell Us Something" required></textarea>
                 </div>
                 <div class="row additional">
-                    <button type="submit" class="request-button submit">Submit</button>
+                    <button data-submit-url="{% url 'index' %}" id="quote_submit" type="submit" class="request-button submit quote_submit">Submit</button>
                 </div>
             </div>
         </div>
@@ -248,6 +280,7 @@
         <!-- <span><a href="#">Privacy Policy</a></span> -->
         <!-- <span><a href="#">Site Map</a></span> -->
 </div>
+
  
     
     <script src="{% static 'website/js/script.js' %}"></script>

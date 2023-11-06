@@ -1,7 +1,8 @@
 {% extends 'website/layout.html' %}
 {% block main %}
+
 <div class="contact-div spacing">
-    <form class="form" method="post" action="{% url 'contact' %}">
+    <form id="form" class="form" method="post" action="{% url 'contact' %}">
         {%csrf_token%}
         <h3 class="request"><h2>{{ title }}</h2></h3>
         <div class="container">
@@ -11,14 +12,14 @@
             </div>   
             <div class="row-2">
                 <div class="col name"><input class="uniform" type="email" name="email" placeholder="Email" size="10" required></div>
-                <div class="col name"><input class="uniform" type="text" name="number" placeholder="Phone Number" size="10" required></div>
+                <div class="col name"><input class="uniform" type="text" name="number" placeholder="Phone Number" size="10" pattern="[0-9]{10}" required></div>
             </div>
         </div>
         <div class="textarea-div">
             <textarea class="uniform" name="info" title="Text" class="form-control" name="" id=""  cols="35" rows="" placeholder="Tell Us Something" required></textarea>
         </div>
         <div class="row additional">
-            <button id="contact_submit" type="submit" class="request-button submit">Submit</button>
+            <button data-submit-url="{% url 'contact' %}" id="" type="submit" class="request-button submit">Submit</button>
         </div>
     </form>
 
