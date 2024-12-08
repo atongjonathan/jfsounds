@@ -349,7 +349,7 @@
 
 .date
 {
-    width: 100%;
+    /* width: 100%; */
     padding: 10px;
 }
 
@@ -372,6 +372,7 @@
 }
 .uniform
 {
+    text-indent: 10px;
     /* background-color: yellow; */
     width: 100%;
 }
@@ -396,6 +397,10 @@
     column-gap: 30px;
     width: 80%;
     margin: 0 auto;
+}
+input
+{
+    text-indent: 10px;
 }
 /* input[type="date"] {
     font-family: 'Montserrat', sans-serif; 
@@ -584,7 +589,7 @@ hr
 {
     color: #755a15;
     height: 3px;
-    width: 40%;
+    width: 20%;
     border: 2px solid #755a15;
 }
 /* CONTACT CSS */
@@ -634,15 +639,21 @@ hr
 }
 .dropdown
 {
+    text-align: center;
     display: flex;
     flex-direction: column;
     position: absolute;
     z-index: 4;
     width: 20%;
+    background-color: black;
 
 }
 .hidden
 {
     display: none;
 
+}
+.select
+{
+    width: 50%;
 }

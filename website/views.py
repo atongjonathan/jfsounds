@@ -58,7 +58,8 @@ def contact(request):
         form = ContactForm(**data)
         form.save()
         context["is_success"] = True
-        # return HttpResponseRedirect(reverse("contact"))
+        content = '\n'.join([f"{key.title()}: {value}" for key,value in data.items()])
+        send_email("atongjonathan@gmail.com",data["email"], content)
     return render(request, "website/contact.html", context=context)
 
 def av(request):

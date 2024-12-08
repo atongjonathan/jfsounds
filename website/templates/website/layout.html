@@ -29,36 +29,36 @@
         <div class="navigation">
             
             <div class="logo">
-                <a class="logo-img" href="{% url 'index' %}#main"><img class="logo-img" src="https://telegra.ph/file/d2a3cac35fc43dda8cb5d.jpg" alt="logo"></a>
-                <div class="title"><a href="{% url 'index' %}" class="intro-content start">Jf Sounds Lighting and Equipment</a></div>
+                <a title="JF Founds" class="logo-img" href="{% url 'index' %}#main"><img class="logo-img" src="https://telegra.ph/file/d2a3cac35fc43dda8cb5d.jpg" alt="logo"></a>
+                <div class="title"><a title="JF Sounds" href="{% url 'index' %}" class="intro-content start">Jf Sounds Lighting and Equipment Rentals</a></div>
 
             </div>
            
             <div class="nav-bar">
                 <ul class="links">
                     <!-- <li><a class="link-child dropdown" href="{% url 'index' %}">Home</a> </li> -->
-                    <li><a id="services" class="link-child" href="{% url 'index' %}#main">Services</a>
+                    <li><a id="services" class="link-child">Services</a>
                         <div id="hidden" class="links-secondary dropdown-content dropdown hidden">
-                            <a href="{% url 'av' %}#main" class="links-child-2">av equipent rental</a>
-                            <a href="{% url 'special' %}#main" class="links-child-2">special effects</a>
-                            <a href="{% url 'audio' %}#main" class="links-child-2" >audio</a>
-                            <a href="{% url 'lighting' %}#main" class="links-child-2">lighting</a>
-                            <a href="{% url 'staging' %}#main" class="links-child-2">staging</a>
-                            <a href="{% url 'backline' %}#main" class="links-child-2">backline</a>
+                            <a title="AV Equipment Rental" href="{% url 'av' %}#main" class="links-child-2">av equipent rental</a>
+                            <a title="Special Effrcts" href="{% url 'special' %}#main" class="links-child-2">special effects</a>
+                            <a title="Audio" href="{% url 'audio' %}#main" class="links-child-2" >audio</a>
+                            <a title="Lighting" href="{% url 'lighting' %}#main" class="links-child-2">lighting</a>
+                            <a title="Staging" href="{% url 'staging' %}#main" class="links-child-2">staging</a>
+                            <a title="Backline" href="{% url 'backline' %}#main" class="links-child-2">backline</a>
             
                         </div>
                     </li>
 
-                    <li><a class="link-child" href="{% url 'careers' %}#main">Careers</a> </li>
-                    <li><a class="link-child" href="{% url 'work' %}#main">Our Work</a> </li>
-                    <li><a class="link-child" href="{% url 'contact' %}#main">Contact Us</a> </li>
-                    <li><a class="link-child" href="{% url 'about' %}#main">About</a> </li>
+                    <li><a title="Carers" class="link-child" href="{% url 'careers' %}#main">Careers</a> </li>
+                    <li><a title="Our Work" class="link-child" href="{% url 'work' %}#main">Our Work</a> </li>
+                    <li><a title="Contact Us" class="link-child" href="{% url 'contact' %}#main">Contact Us</a> </li>
+                    <li><a title="About" class="link-child" href="{% url 'about' %}#main">About</a> </li>
                 </ul>
             </div>
         </div>
         <div class="banner">
             <div class="video-div">
-                <video class="video" autoplay loop muted>
+                <video class="video" autoplay loop muted disablepictureinpicture="true">
                     <source src="{% static 'website/video/video.mp4' %}" type="video/mp4">
                     Your browser does not support the video tag
                 </video>
@@ -66,11 +66,11 @@
                     <div class="footer-child">
                         <!-- <h5 class="link-chld">SOCIALS</h5> -->
                         <ul class="footer-list image-div">
-                            <li><a title="email" href="mailto:atongjonathan@gmail.com" target="_blank"><i class="fa-solid fa-envelope image"></i></a></i></li>
-                            <li><a title="instagram" href="https://www.instagram.com/jfs_ounds" target="_blank"><i class="fa-brands fa-instagram image"></i></a></i></li>
-                            <li><a title="tiktok" href="https://www.tiktok.com/jfsounds2" target="_blank"><i class="fa-brands fa-tiktok image"></i></a></i></li>
-                            <li><a title="facebook" href="https://www.facebook.com/jfsoundske" target="_blank"><i class="fa-brands fa-facebook image"></i></a></li>
-                            <li><a title="whatsapp" href="https://api.whatsapp.com/send?phone=254721920166" target="_blank"><i class="fa-brands fa-whatsapp image"></i></a></li>
+                            <li><a title="Gmail" href="mailto:Jfsounds@gmail.com" target="_blank"><i class="fa-solid fa-envelope image"></i></a></i></li>
+                            <li><a title="Instagram" href="https://www.instagram.com/jfs_ounds" target="_blank"><i class="fa-brands fa-instagram image"></i></a></i></li>
+                            <li><a title="Tiktok" href="https://www.tiktok.com/jfsounds2" target="_blank"><i class="fa-brands fa-tiktok image"></i></a></i></li>
+                            <li><a title="Facebook" href="https://www.facebook.com/jfsoundske" target="_blank"><i class="fa-brands fa-facebook image"></i></a></li>
+                            <li><a title="Whatsapp" href="https://api.whatsapp.com/send?phone=254721920166" target="_blank"><i class="fa-brands fa-whatsapp image"></i></a></li>
                         </ul>
                     </div>
                         <div id="main" class="main-title">
@@ -84,12 +84,12 @@
         <div class="nav-2">
             <div class="nav-div">
                 <div class="links-secondary dropdown-content">
-                    <a href="{% url 'av' %}#main" class="links-child-2">av equipent rental</a>
-                    <a href="{% url 'special' %}#main" class="links-child-2">special effects</a>
-                    <a href="{% url 'audio' %}#main" class="links-child-2">audio</a>
-                    <a href="{% url 'lighting' %}#main" class="links-child-2">lighting</a>
-                    <a href="{% url 'staging' %}#main" class="links-child-2">staging</a>
-                    <a href="{% url 'backline' %}#main" class="links-child-2">backline</a>
+                    <a title="AV Equipment Rental" href="{% url 'av' %}#main" class="links-child-2">av equipent rental</a>
+                    <a title="Special Effrcts" href="{% url 'special' %}#main" class="links-child-2">special effects</a>
+                    <a title="Audio" href="{% url 'audio' %}#main" class="links-child-2" >audio</a>
+                    <a title="Lighting" href="{% url 'lighting' %}#main" class="links-child-2">lighting</a>
+                    <a title="Staging" href="{% url 'staging' %}#main" class="links-child-2">staging</a>
+                    <a title="Backline" href="{% url 'backline' %}#main" class="links-child-2">backline</a>
     
                 </div>
             </div>
@@ -106,7 +106,7 @@
     <section class="quote">
         <p class="get-quote">Get a quick quote!</p>
         <p class="contact-text">Contact us to learn how we can put together a specialized video package that will work for your event.</p>
-        <a href="{% url 'contact' %}"><button class="request-button">Request for {{ title }}</button></a>
+        <a href="{% url 'contact' %}#main"><button class="request-button">Request for {{ title }}</button></a>
 
     </section>
     <div class="ending-img-div">
@@ -134,7 +134,7 @@
                 </div>   
                 <div class="row-2">
                     <div class="col name"><input class="uniform" type="email" name="email" placeholder="Email Address" size="10" required></div>
-                    <div class="col name"><input class="uniform" type="tel" id="phone" name="number" placeholder="Phone Number: 0712345678" pattern="[0-9]{10}" size="10" required>
+                    <div class="col name"><input class="uniform" type="tel" id="phone" name="number" placeholder="No. :0712345678" pattern="[0-9]{10}" size="10" required>
                         </div>
                 </div>
                 <div class="checkbox row-1">
@@ -156,9 +156,9 @@
                     </div>
 
                 </div>
-                <div class="row-1">
-                    <select class="uniform" name="state" id="state" required>
-                        <option value="" selected="selected">Select County</option>
+                <div class="row-1 ">
+                    <select class="select" name="state" id="state" required>
+                        <option value="" selected="selected">Select County ...</option>
                         <option value="Baringo">Baringo</option>
                         <option value="Bomet">Bomet</option>
                         <option value="Bungoma">Bungoma</option>
@@ -208,7 +208,7 @@
                         <option value="West Pokot">West Pokot</option>
                         
                     </select>
-                    <select class="uniform" name="budget" style="width: 45%;" required>
+                    <select class="select" name="budget" required>
                         <option value="" selected="selected" class="gf_placeholder">Eqpt. Rental Budget (Select from Dropdown)</option>
                         <option value="Kshs. 5,000 - Kshs. 10,000">Kshs. 5,000 - Kshs. 10,000</option>
                         <option value="Kshs. 10,000 - 15,000">Kshs. 10,000 - 15,000</option>
@@ -220,12 +220,9 @@
                     </select>
                 </div>
                 <div class="row-1 boxes date-div">
-                    <div class="date-text additional">
-                        Date:
-                    </div>
-                    <input class="date" name="date" type="date" placeholder="Select a Date" required></div></div>
+                    <input class="uniform" name="date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Select a Date" required></div></div>
                 <div class="textarea-div">
-                    <textarea class="textarea" name="info" title="Text" class="form-control" name="" id=""  cols="35" rows="" placeholder="Tell Us Something" required></textarea>
+                    <textarea class="textarea" name="info" title="Text" class="form-control" name="" id=""  cols="" rows="" placeholder="Tell Us Something"></textarea>
                 </div>
                 <div class="row additional">
                     <button data-submit-url="{% url 'index' %}" id="quote_submit" type="submit" class="request-button submit quote_submit">Submit</button>
@@ -241,32 +238,32 @@
             <div class="footer-child">
                 <h5 class="link-chld">SOCIALS</h5>
                 <ul class="footer-list image-div">
-                    <li><a title="instagram" href="https://www.instagram.com/jfs_ounds" target="_blank"><i class="fa-brands fa-instagram image"></i></a></i></li>
-                    <li><a title="tiktok" href="https://www.tiktok.com/jfsounds2" target="_blank"><i class="fa-brands fa-tiktok image"></i></a></i></li>
-                    <li><a title="facebook" href="https://www.facebook.com/jfsoundske" target="_blank"><i class="fa-brands fa-facebook image"></i></a></li>
-                    <li><a title="whatsapp" href="https://api.whatsapp.com/send?phone=254721920166" target="_blank"><i class="fa-brands fa-whatsapp image"></i></a></li>
+                    <li><a title="Instagram" href="https://www.instagram.com/jfs_ounds" target="_blank"><i class="fa-brands fa-instagram image"></i></a></i></li>
+                    <li><a title="Tiktok" href="https://www.tiktok.com/jfsounds2" target="_blank"><i class="fa-brands fa-tiktok image"></i></a></i></li>
+                    <li><a title="Facebook" href="https://www.facebook.com/jfsoundske" target="_blank"><i class="fa-brands fa-facebook image"></i></a></li>
+                    <li><a title="Whatsapp" href="https://api.whatsapp.com/send?phone=254721920166" target="_blank"><i class="fa-brands fa-whatsapp image"></i></a></li>
                 </ul>
             </div>
             <div class="footer-child">
                 <h5>SERVICES</h5>
                 <ul class="footer-list">
-                    <li><a class="link-child" href="{% url 'av' %}#main">AV Equipment</a> </li>
-                    <li><a class="link-child" href="{% url 'special' %}#main">Special Effects</a> </li>
-                    <li><a class="link-child" href="{% url 'audio' %}#main">Audio</a> </li>
-                    <li><a class="link-child" href="{% url 'lighting' %}#main">Lighting</a></li>
-                    <li><a class="link-child" href="{% url 'staging' %}#main">Staging</a> </li>
-                    <li><a class="link-child" href="{% url 'backline' %}#main">Backline</a> </li>
+                    <li><a title="AV Aquipment" class="link-child" href="{% url 'av' %}#main">AV Equipment</a> </li>
+                    <li><a title="Specal Effects" class="link-child" href="{% url 'special' %}#main">Special Effects</a> </li>
+                    <li><a title="Audio" class="link-child" href="{% url 'audio' %}#main">Audio</a> </li>
+                    <li><a title="Lighting" class="link-child" href="{% url 'lighting' %}#main">Lighting</a></li>
+                    <li><a title="Staging" class="link-child" href="{% url 'staging' %}#main">Staging</a> </li>
+                    <li><a title="Backline" class="link-child" href="{% url 'backline' %}#main">Backline</a> </li>
                 </ul>
             </div>
             <div class="footer-child">
                 <h5>LINKS</h5>
                 <ul class="footer-list">
-                    <li><a class="link-child" href="{% url 'index' %}#main">Services</a> </li>
-                    <li><a class="link-child" href="{% url 'index' %}#main">Equipment</a> </li>
-                    <li><a class="link-child" href="{% url 'work' %}#main">Our Work</a> </li>
-                    <li><a class="link-child" href="{% url 'careers' %}#main">Careers</a> </li>
-                    <li><a class="link-child" href="{% url 'contact' %}#main">Contact Us</a> </li>
-                    <li><a class="link-child" href="{% url 'about' %}#main">About</a> </li>
+                    <li><a title="Services" class="link-child" href="{% url 'index' %}#main">Services</a> </li>
+                    <li><a title="Equipment" class="link-child" href="{% url 'index' %}#main">Equipment</a> </li>
+                    <li><a title="Our Work" class="link-child" href="{% url 'work' %}#main">Our Work</a> </li>
+                    <li><a title="Careers" class="link-child" href="{% url 'careers' %}#main">Careers</a> </li>
+                    <li><a title="Contact Us" class="link-child" href="{% url 'contact' %}#main">Contact Us</a> </li>
+                    <li><a title="About" class="link-child" href="{% url 'about' %}#main">About</a> </li>
                 </ul>
             </div>
             <div class="footer-child map">
